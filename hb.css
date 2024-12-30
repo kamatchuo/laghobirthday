@@ -1,0 +1,166 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Change to column for vertical alignment */
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  font-family: 'Amatic SC', cursive;
+  
+  overflow: hidden;
+  transition: background-color 1s;
+}
+
+/* Button style */
+.button, #celebrateButton, #anotherPageButton {
+  padding: 15px 30px;
+  font-size:  1.4rem;
+    font-family: Comic Sans;
+  background-color: #f5c518;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin-top: 20px; /* Adds spacing between buttons */
+}
+
+.button:active, #celebrateButton:active, .anotherPageButton:active {
+  transform: scale(0.95);
+}
+
+/* Happy Birthday message */
+#message {
+  display: none;
+  font-size: 50px;
+  color: #ff69b4;
+  text-shadow: 2px 2px 5px #333;
+  position: relative; /* Position relative for proper alignment */
+  opacity: 0;
+  animation: fadeIn 2s forwards; /* Animation for fading in */
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Lights container */
+.lights-container {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Light bulbs */
+.light {
+  width: 20px;
+  height: 20px;
+  background-color: gray;
+  border-radius: 50%;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+/* On state for lights and background */
+.on .light {
+  background-color: #FFD700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 1);
+  animation: sway 2s ease-in-out infinite alternate, glow 1.5s ease-in-out infinite alternate;
+}
+
+.on {
+  background-color: #f5f5dc;
+}
+
+/* Fireworks container */
+#fireworks-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Firework style */
+.firework {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff005a, transparent);
+  animation: firework-explode 1s ease-out forwards;
+}
+
+@keyframes firework-explode {
+  0% { transform: scale(0.1); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+/* Envelope styles */
+#envelopeSection {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#envelope {
+  width: 200px;
+  height: 120px;
+  background-color: #e1b7b7;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out; /* Smooth opening transition */
+}
+
+.flap {
+  width: 100%;
+  height: 40px;
+  background-color: #e1b7b7;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  transition: top 0.5s ease-in-out;
+}
+
+.body {
+  width: 100%;
+  height: 100%;
+  background-color: #e1b7b7;
+  border: 1px solid #b49f9f;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Letter styles */
+#letter {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #b49f9f;
+  background-color: #f1f1f1;
+  color: black; /* Letter text color */
+  display: none; /* Initially hidden */
+}
+
+/* Open envelope animation */
+.open .flap {
+  top: -10px; /* Move flap up when opened */
+}
+
+
+  

@@ -1,0 +1,123 @@
+:root {
+    --primary: #fff; /* Letter Background */
+    --bg-color: #f8f0e3; /* Light Cream Background */
+    --bg-envelope-color: #ffebc3; /* Soft Pastel Peach */
+    --envelope-tab: #ffdb99; /* Deeper Peach */
+    --envelope-cover: #ffe5b4; /* Light Tan */
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --heart-color: #d5006d; /* Rich Magenta */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--bg-color); /* Updated */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+}
+
+.envelope-wrapper {
+    background: var(--bg-envelope-color); /* Updated */
+    box-shadow: 0 0 40px var(--shadow-color);
+    position: relative;
+    z-index: 10;
+    cursor: pointer; /* Change cursor to indicate click */
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 230px;
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    border-top: 130px solid var(--envelope-tab); /* Updated */
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out; /* Animation for rotation */
+}
+
+.envelope::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 0px;
+    height: 0px;
+    border-top: 130px solid transparent;
+    border-right: 150px solid var(--envelope-cover); /* Updated */
+    border-bottom: 100px solid var(--envelope-cover); /* Updated */
+    border-left: 150px solid var(--envelope-cover); /* Updated */
+}
+
+.heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--heart-color); /* Updated */
+    z-index: 4;
+    transform: translate(-50%, -20%) rotate(45deg);
+    transition: transform 0.5s ease-in-out 1s;
+    box-shadow: 0 1px 6px var(--shadow-color);
+}
+
+/* Styles for photos */
+.photo {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    z-index: 3; /* Place photos above the envelope */
+}
+
+.show {
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Reset position */
+}
+
+/* Animation for the open envelope */
+.flap > .envelope::before {
+    transform: rotateX(180deg); /* Rotate the envelope */
+}
+
+.lights-container {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  /* Light bulbs */
+  .light {
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    border-radius: 50%;
+    transition: background-color 0.5s, box-shadow 0.5s;
+    background-color: #FFD700; /* Gold */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 1);
+    animation: sway 2s ease-in-out infinite alternate, glow 1.5s ease-in-out infinite alternate;
+  }
+  
+
+  
+  

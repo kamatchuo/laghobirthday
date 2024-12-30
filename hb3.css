@@ -1,0 +1,116 @@
+:root {
+    --primary: #fff;
+    --bg-color: #f8f0e3;
+    --card-bg: #ffebc3;
+    --card-border: #ffdb99;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --text-color: #4a3c30;
+    --accent-color: #8B4B65;
+    
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+  }
+  
+  .header {
+    padding: 20px;
+    background-color: var(--accent-color);
+    color: var(--primary);
+    box-shadow: 0 2px 5px var(--shadow);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .messages-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    gap: 20px;
+  }
+  
+  .message-card {
+    width: 300px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .message-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px var(--shadow);
+  }
+  
+  .message-content {
+    padding: 20px;
+    text-align: left;
+      filter: blur(5px); /* Appliquer un flou initial */
+      opacity: 0; /* Masquer au début */
+      transition: filter 1s ease, opacity 1s ease; /* Transition fluide */
+  }
+  
+  .message-content.visible {
+      filter: blur(0); /* Plus de flou */
+      opacity: 1; /* Visible */
+  }
+  
+  
+  
+  .message-content h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+  }
+  
+  .message-content p {
+    margin: 10px 0 0;
+    font-size: 1rem;
+  }
+  
+  .return-button {
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    background-color: #f5c518;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-family: Comic Sans;
+    cursor: pointer;
+    margin: 20px auto;
+    display: inline-block;
+    box-shadow: 0 2px 5px var(--shadow);
+    transition: background-color 0.3s ease;
+  }
+  
+  .return-button:hover {
+    background-color: #f5c518;
+  }
+  .lights-container {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .light {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #FFD700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 1);
+    animation: sway 2s ease-in-out infinite alternate,
+               glow 1.5s ease-in-out infinite alternate;
+  }
+  

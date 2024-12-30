@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="hb.css">
+</head>
+<body>
+
+  <!-- Lights container -->
+  <div class="lights-container">
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+  </div>
+
+  <!-- Button -->
+  <button class="button" onclick="showMessage()">Click</button>
+
+  <!-- Happy Birthday Message -->
+  <div id="message">Happy Birthday Laghooo!</div>
+
+  <!-- Celebrate Button (initially hidden) -->
+  <button id="celebrateButton" onclick="startFireworks()" style="display:none;">Celebrate!</button>
+
+  <!-- New Button to Another Page (initially hidden) -->
+  <button id="anotherPageButton" onclick="goToAnotherPage()" style="display:none;">Continuer</button>
+
+  <!-- Fireworks container -->
+  <div id="fireworks-container"></div>
+
+  <script src="hb.js"></script>
+</body>
+</html>
+
